@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Game Accounts - Premium FC Mobile & Gaming Accounts in Tanzania</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .hero {
+            background: url('https://via.placeholder.com/1200x400?text=Premium+FC+Mobile+Accounts') center/cover;
+            height: 60vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .accounts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 3rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .accounts-table th, .accounts-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .accounts-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .accounts-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .accounts-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .price {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .rating {
+            display: inline-block;
+            background-color: var(--success);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .game-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .game-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .game-card-content {
+            padding: 1.5rem;
+        }
+        
+        .game-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .game-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .payment-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+        
+        .payment-method i {
+            font-size: 1.5rem;
+            margin-right: 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .location i {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+        
+        .location p {
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--dark);
+                transition: all 0.3s;
+                padding: 1rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+            
+            .accounts-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .payment-method {
+                flex: 1 1 100%;
+            }
+            
+            .location {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .location i {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Elite Game Accounts</div>
+        <div class="tagline">Premium FC Mobile & Gaming Accounts in Tanzania</div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#fc-mobile">FC Mobile</a></li>
+                <li><a href="#other-games">Other Games</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Premium FC Mobile Accounts</h1>
+            <p>Own a top-rated FC Mobile account today and dominate the pitch with elite players and unmatched stats!</p>
+            <a href="#fc-mobile" class="btn">Browse Accounts</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section id="fc-mobile">
+            <h2 class="section-title">Premium FC Mobile Accounts</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">We offer only the highest quality FC Mobile accounts with 100+ ratings, packed with legendary players and amazing squads.</p>
+            
+            <table class="accounts-table">
+                <thead>
+                    <tr>
+                        <th>Account ID</th>
+                        <th>Rating</th>
+                        <th>Featured Players</th>
+                        <th>Coins</th>
+                        <th>Price (TZS)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FCM001</td>
+                        <td><span class="rating">104</span></td>
+                        <td>Messi, Ronaldo, Mbappé, Neymar</td>
+                        <td>5.2M</td>
+                        <td class="price">120,000</td>
+                        <td><a href="#contact" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Buy Now</a></td>
+                    </tr>
+                    <tr>
+                        <td>FCM002</td>
+                        <td><span class="rating">102</span></td>
+                        <td>Haaland, De Bruyne, Van Dijk, Salah</td>
+                        <td>3.8M</td>
+                        <td class="price">95,000</td>
+                        <td><a href="#contact" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Buy Now</a></td>
+                    </tr>
+                    <tr>
+                        <td>FCM003</td>
+                        <td><span class="rating">101</span></td>
+                        <td>Lewandowski, Benzema, Modrić, Courtois</td>
+                        <td>4.5M</td>
+                        <td class="price">105,000</td>
+                        <td><a href="#contact" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Buy Now</a></td>
+                    </tr>
+                    <tr>
+                        <td>FCM004</td>
+                        <td><span class="rating">103</span></td>
+                        <td>Kante, Kanté, Pogba, Rashford</td>
+                        <td>6.1M</td>
+                        <td class="price">135,000</td>
+                        <td><a href="#contact" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Buy Now</a></td>
+                    </tr>
+                    <tr>
+                        <td>FCM005</td>
+                        <td><span class="rating">100</span></td>
+                        <td>Son, Kane, Dias, Foden</td>
+                        <td>2.9M</td>
+                        <td class="price">85,000</td>
+                        <td><a href="#contact" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Buy Now</a></td>
+                    </tr>
+                    <tr>
+                        <td>FCM006</td>
+                        <td><span class="rating">105</span></td>
+                        <td>Legend Icons: Zidane, Ronaldinho, Maldini, Cafu</td>
+                        <td>7.5M</td>
+                        <td class="price">150,000</td>
+                        <td><a href="#contact" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Buy Now</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="other-games">
+            <h2 class="section-title">Other Premium Game Accounts</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">We also offer elite accounts for other popular games at competitive prices.</p>
+            
+            <div class="game-cards">
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x300?text=Call+of+Duty+Mobile" alt="Call of Duty Mobile">
+                    <div class="game-card-content">
+                        <h3>Call of Duty: Mobile</h3>
+                        <p>Legendary ranked accounts with rare skins, weapons, and battle pass unlocks.</p>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x300?text=PubG+Mobile" alt="PubG Mobile">
+                    <div class="game-card-content">
+                        <h3>PUBG Mobile</h3>
+                        <p>Ace tier accounts with premium outfits, weapon skins, and UC balances.</p>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x300?text=Free+Fire" alt="Free Fire">
+                    <div class="game-card-content">
+                        <h3>Free Fire</h3>
+                        <p>Heroic rank accounts with exclusive bundles, characters, and diamonds.</p>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="payment">
+            <h2 class="section-title">Payment Methods</h2>
+            
+            <div class="payment-section">
+                <p>We offer convenient and secure payment options for customers in Tanzania:</p>
+                
+                <div class="payment-methods">
+                    <div class="payment-method">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <h4>M-Pesa</h4>
+                            <p>Instant Transfer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <h4>Tigo Pesa</h4>
+                            <p>Instant Transfer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>Bank Transfer</h4>
+                            <p>NMB, CRDB, etc.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method">
+                        <i class="fab fa-paypal"></i>
+                        <div>
+                            <h4>PayPal</h4>
+                            <p>International</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-style: italic;">All transactions are secure and accounts are delivered immediately after payment confirmation.</p>
+            </div>
+            
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <p>Based in Dar es Salaam, Tanzania | Serving customers nationwide</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div style="background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <p style="text-align: center; margin-bottom: 1.5rem;">Ready to own a premium gaming account? Contact us through any of these channels:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-phone-alt" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                        <h3>Call Us</h3>
+                        <p>+255 123 456 789</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <i class="fas fa-envelope" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                        <h3>Email Us</h3>
+                        <p>sales@elitegametanzania.com</p>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <i class="fab fa-whatsapp" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                        <h3>WhatsApp</h3>
+                        <p>+255 123 456 789</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#fc-mobile">FC Mobile</a></li>
+            <li><a href="#other-games">Other Games</a></li>
+            <li><a href="#payment">Payment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">© 2023 Elite Game Accounts Tanzania. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link (for mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
